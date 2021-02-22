@@ -12,6 +12,7 @@ RUN wget -O - "https://api.github.com/repos/prologic/tube/releases/latest" \
 
 WORKDIR /tmp/tube
 ENV CGO_ENABLED=0
+ENV GO111MODULE=off
 
 RUN go get -v github.com/GeertJohan/go.rice/rice
 RUN tar -zxvf /tmp/tube.tar.gz --strip-components=1 -C . \
